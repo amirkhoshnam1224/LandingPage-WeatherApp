@@ -5,37 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Permissions-Policy" content="geolocation=(self)">
   <link rel="stylesheet" href="style.css">
-  <title>Landing Page</title>
+  <title>Landing page Weather App</title>
 </head>
 <body>
-  <h1>Welcome to the Weather App</h1>
+  <h1>Weather App</h1>
   <button id="load-weather-app">Load Weather App</button>
-  <div id="weather-info" class="weather-display"></div>
-  
-  <script>
-    document.getElementById("load-weather-app").addEventListener("click", function() {
-      const iframe = document.createElement("iframe");
-      iframe.src = "https://vite-weather-app-7d14e.web.app/"; 
-      iframe.width = "100%";
-      iframe.height = "600px";
-      iframe.style.border = "none";
-      iframe.allow = "geolocation"; 
-      document.body.appendChild(iframe);
-      document.getElementById("load-weather-app").style.display = "none"; 
-    });
-    window.addEventListener("message", (event) => {
-      if (event.origin !== "https://vite-weather-app-7d14e.web.app/") {
-        console.error("Origin not recognized:", event.origin);
-        return;
-      }
-      const weatherData = event.data.payload;
-      console.log('Received weather data:', weatherData);
-      document.getElementById('weather-info').innerHTML = `
-        <p>Weather in: ${weatherData.name}</p>
-        <p>Temperature: ${weatherData.main.temp}°C</p>
-        <p>Condition: ${weatherData.weather[0].description}</p>
-      `;
-    });
-  </script>
+  <div id="weather-container">
+    <div id="weather-info"></div>
+    <button id="close-weather-app">✖</button>
+    <iframe id="weather-iframe" width="100%" height="800px" style="border: none;"></iframe>
+
+  </div>
+
+  <script src="./script.js"></script>
 </body>
+
 </html>

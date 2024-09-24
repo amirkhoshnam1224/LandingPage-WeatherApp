@@ -1,0 +1,44 @@
+1. Project Structure
+  Landing Page: Built using pure JavaScript for simplicity and to meet the requirement of using no frameworks.
+  Weather App: Developed with React to leverage component-based architecture and manage state easily.
+
+2. Communication between Projects
+  Method: Used postMessage for cross-origin communication between the landing page and the weather app. This was chosen for its effectiveness in passing data between two different domains.
+  Reasoning: Using postMessage allows for easy communication without needing to modify server configurations for CORS.
+
+3. Weather API Integration
+  API Used: OpenWeatherMap API.
+  Parameters: Included latitude and longitude for location-based weather data.
+  Error Handling: Implemented checks for API response to handle cases where the weather data might not be available.
+
+4. State Management in Weather App
+  Choice of Redux Toolkit: Opted for Redux Toolkit for state management in the weather app, as it simplifies the store setup and provides powerful tools for handling side effects.
+
+5. User Experience
+  Geolocation: Implemented geolocation to automatically fetch the user’s current location.
+  Fallback Option: Provided a manual city selector for users who disable geolocation.
+
+6. Testing Strategy
+  Unit Tests: Wrote unit tests for the useGeolocation hook and the weather app components to ensure functionality.
+  E2E Tests: Used Cypress for end-to-end testing to verify the overall workflow of the application.
+
+7. Deployment
+  Platforms: Deployed both projects on Firebase for easy hosting and access.
+  Automation: Set up automatic deployment through GitHub Actions to streamline updates and changes.
+
+8. Challenges and Solutions
+  Cross-Origin Issues: Faced challenges with cross-origin requests but resolved them using postMessage.
+  Environment Variables: Set up .env for sensitive information like API keys, ensuring they are not hardcoded in the codebase.
+  Conclusion
+                                                 
+                                                              "Important: Please launch the Weather App while connected to a VPN"
+                                                              
+                                                      "If you are unable to obtain your location, please use the Microsoft Edge browser"
+
+
+
+
+
+
+
+
