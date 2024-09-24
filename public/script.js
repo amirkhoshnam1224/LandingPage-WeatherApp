@@ -1,6 +1,6 @@
 document.getElementById("load-weather-app").addEventListener("click", function () {
     const iframe = document.getElementById("weather-iframe");
-    iframe.src = "http://localhost:5174/"; 
+    iframe.src = "https://vite-weather-app-7d14e.web.app/"; 
     document.getElementById("weather-container").style.display = "block"; 
     this.style.display = "none"; 
     getLocation(); 
