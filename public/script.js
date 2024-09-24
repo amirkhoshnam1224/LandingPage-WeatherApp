@@ -1,9 +1,14 @@
 document.getElementById("load-weather-app").addEventListener("click", function () {
     const iframe = document.getElementById("weather-iframe");
-    iframe.src = "https://vite-weather-app-7d14e.web.app/"; 
+    iframe.src = "http://localhost:5174/"; 
     document.getElementById("weather-container").style.display = "block"; 
     this.style.display = "none"; 
     getLocation(); 
+  });
+
+  document.getElementById("close-weather-app").addEventListener("click", function () {
+    document.getElementById("weather-container").style.display = "none"; 
+    document.getElementById("load-weather-app").style.display = "block"; 
   });
 
 const fetchWeatherData = async (lat, lon) => {
