@@ -5,13 +5,7 @@ document.getElementById("load-weather-app").addEventListener("click", function (
     this.style.display = "none"; 
     getLocation(); 
   });
-  document.getElementById("close-weather-app").addEventListener("click", function () {
-    document.getElementById("weather-container").style.display = "none"; // مخفی کردن iframe
-    document.getElementById("load-weather-app").style.display = "block"; // نمایش دوباره دکمه بارگذاری
-  });
-  document.getElementById("load-weather-app").addEventListener("click", function () {
-    getLocation();
-});
+
 const fetchWeatherData = async (lat, lon) => {
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=222d90b4a36a08f635c2aff827c12d51&units=metric`);
